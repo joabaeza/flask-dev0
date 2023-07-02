@@ -21,7 +21,7 @@ botstrap = Bootstrap(app)
 
 class LoginForm(FlaskForm):
     username = StringField('Nombre de usuarios')
-    password = PasswordField('')
+    password = PasswordField('CLave')
 
 
 
