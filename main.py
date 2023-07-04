@@ -3,8 +3,9 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
+import unittest
 """
-18 
+20 08:57
 """
 
 
@@ -23,6 +24,12 @@ class LoginForm(FlaskForm):
     username = StringField('Nombre de usuarios', validators=[DataRequired()])
     password = PasswordField('CLave', validators=[DataRequired()])
     submit = SubmitField('enviar')
+
+@app.cli.command()
+def test():
+    tests = unittest.TestLoader().discover('tests')
+    unittest.TextTestRunner().run(tests)
+
 
 
 
